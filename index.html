@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Game</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Typing Game</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link href="./css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container d_count">
+        <section class="d_section border border-5 border-info-subtle rounded-5 d_count h-100 overflow-hidden">
+            <div class="row m-0 h-100">
+                <div class="col-9 d_tbdr p-0" style="background-color: #efffd7;">
+                    <div class="display-6 custom_hgt d_tbdr">
+                        <div class="overflow-auto custom_content_hgt mt-3 p-1 text-success">
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</div>
+                    
+                        </div>
+                        <div class="d_keyboard custom_hgt1 d_tbdr p-3 pt-2 pb-2 d_bg rounded-3">
+                        <div class="d_btn_wrap mb-1 d-flex justify-content-between">
+                            <button class="btn d_btn1 p-1">~`</button>
+                        <button class="btn d_btn1 p-1">1</button>
+                        <button class="btn d_btn1 p-1">2</button>
+                        <button class="btn d_btn1 p-1">3</button>
+                        <button class="btn d_btn1 p-1">4</button>
+                        <button class="btn d_btn1 p-1">5</button>
+                        <button class="btn d_btn1 p-1">6</button>
+                        <button class="btn d_btn1 p-1">7</button>
+                        <button class="btn d_btn1 p-1">8</button>
+                        <button class="btn d_btn1 p-1">9</button>
+                        <button class="btn d_btn1 p-1">0</button>
+                        <button class="btn d_btn1 p-1">- _</button>
+                        <button class="btn d_btn1 p-1">= +</button>
+                        <button class="btn d_btn1 p-1 d_w_custom">back</button>
+                        </div>
+                        
+                        <div class="d_btn_wrap mb-1 d-flex justify-content-between">
+                        <button class="btn d_btn1 p-1">Tab</button>
+                        <button class="btn d_btn1 p-1">Q</button>
+                        <button class="btn d_btn1 p-1">W</button>
+                        <button class="btn d_btn1 p-1">E</button>
+                        <button class="btn d_btn1 p-1">R</button>
+                        <button class="btn d_btn1 p-1">T</button>
+                        <button class="btn d_btn1 p-1">Y</button>
+                        <button class="btn d_btn1 p-1">U</button>
+                        <button class="btn d_btn1 p-1">I</button>
+                        <button class="btn d_btn1 p-1">O</button>
+                        <button class="btn d_btn1 p-1">P</button>
+                        <button class="btn d_btn1 p-1">&lbrace; [</button>
+                        <button class="btn d_btn1 p-1">&rbrace; ]</button>
+                        <button class="btn d_btn1 p-1">|  \</button>
+                        </div>
+
+                        <div class="d_btn_wrap mb-1 d-flex justify-content-between">
+                            <button class="btn d_btn1 p-1 d_w_custom">Caps</button>
+                            <button class="btn d_btn1 p-1">A</button>
+                            <button class="btn d_btn1 p-1">S</button>
+                            <button class="btn d_btn1 p-1">D</button>
+                            <button class="btn d_btn1 p-1">F</button>
+                            <button class="btn d_btn1 p-1">G</button>
+                            <button class="btn d_btn1 p-1">H</button>
+                            <button class="btn d_btn1 p-1">J</button>
+                            <button class="btn d_btn1 p-1">K</button>
+                            <button class="btn d_btn1 p-1">L</button>
+                            <button class="btn d_btn1 p-1">: ;</button>
+                            <button class="btn d_btn1 p-1">"" '</button>
+                            <button class="btn d_btn1 p-1 d_w_custom">Enter</button>
+                            </div>
+
+                            <div class="d_btn_wrap mb-1 d-flex justify-content-between">
+                                <button class="btn d_btn1 p-1 d_w_custom">Shift</button>
+                                <button class="btn d_btn1 p-1">Z</button>
+                                <button class="btn d_btn1 p-1">X</button>
+                                <button class="btn d_btn1 p-1">C</button>
+                                <button class="btn d_btn1 p-1">V</button>
+                                <button class="btn d_btn1 p-1">B</button>
+                                <button class="btn d_btn1 p-1">N</button>
+                                <button class="btn d_btn1 p-1">M</button>
+                                <button class="btn d_btn1 p-1">&lt; ,</button>
+                                <button class="btn d_btn1 p-1">&gt; .</button>
+                                <button class="btn d_btn1 p-1">? /</button>
+                                <button class="btn d_btn1 p-1 d_w_custom">Shfit</button>
+                            </div>
+
+                            <div class="d_btn_wrap mb-1 d-flex justify-content-between">
+                                <button class="btn d_btn1 p-1 d_w_custom">ctrl</button>
+                                <button class="btn d_btn1 p-1">fn</button>
+                                <button class="btn d_btn1 p-1">Win</button>
+                                <button class="btn d_btn1 p-1">alt</button>
+                                <button class="btn d_btn1 p-1 d_w_custom_space">space</button>
+                                <button class="btn d_btn1 p-1">alt</button>
+                                <button class="btn d_btn1 p-1">ctrl</button>
+                                <button class="btn d_btn1 p-1">&uparrow;</button>
+                                <button class="btn d_btn1 p-1">&leftarrow;</button>
+                                <button class="btn d_btn1 p-1">&rightarrow;</button>
+                                <button class="btn d_btn1 p-1">&downarrow;</button>
+                                
+                            </div>
+                        
+                    </div>
+                    <div class="d_hand text-center custom_hand_hgt d_tbdr hand_img">
+                        <!-- <img src="./img/hand.png" class="img-fluid w-50"> -->
+                    </div>
+                </div>
+                <div class="col-3 d_tbdr p-0" style="background-color: #d2f59f;">
+                <h2 class="pb-2 border-bottom border-dark-subtle m-3 mt-5 p-0 mb-1 fs-6 fw-bold">Time</h2>
+                <h3 class="pb-2 m-3 fs-4 fw-bold p-0 mt-0">3:00</h3>
+                <div class="ms-3">
+                    <button class="btn btn-outline-success btn-lg">Start</button>
+                    <button class="btn btn-outline-danger btn-lg">Reset</button>
+                </div>
+                
+                
+                </div>
+            </div>
+        </section>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="./js/custom.js"></script>
+    </body>
 </html>
