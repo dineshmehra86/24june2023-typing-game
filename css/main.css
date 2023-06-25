@@ -8,16 +8,16 @@
     /* height: 600px; */
 }
 .custom_content_hgt {
-    height: 200px;
+    height: 170px;
 }
 .custom_hgt {
     height: 215px;
 }
 .custom_hand_hgt {
-    height: 200px;
+    height: 170px;
 }
 .hand_img {
-    background: url("../img/hand.png") no-repeat center bottom/contain;
+    background: url("../img/hand3.png") no-repeat center bottom/contain;
 }
 
 .d_btn1 {
