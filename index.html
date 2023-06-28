@@ -8,106 +8,151 @@
         <link href="./css/main.css" rel="stylesheet">
     </head>
     <body>
+        <!-- Modal -->
+        <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="registrationModalLabel">Registration Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                        <label for="first_name" class="form-label">First Name</label>
+                        <input name="first_name" type="text" class="form-control" id="first_name" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                        <label for="last_name" class="form-label">Last Name</label>
+                        <input type="last_name" class="form-control" id="last_name">
+                        </div>
+                        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary d_save" onclick="saveRegisInfo()">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+  
         <div class="container d_count">
         <section class="d_section border border-5 border-info-subtle rounded-5 d_count h-100 overflow-hidden">
             <div class="row m-0 h-100">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-9 d_tbdr p-0" style="background-color: #efffd7;">
-                    <div class="display-6 custom_hgt d_tbdr">
-                        <div class="overflow-auto custom_content_hgt mt-3 p-1 pt-0 ps-3 pe-3 text-success fs-3 lh-base fw-semibold">
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</div>
+                    <div class="custom_hgt1 d_tbdr mb-3">
+                        <div class="overflow-auto custom_content_hgt mt-3 p-1 pt-0 ps-3 pe-3 text-success fs-4 lh-base fw-semibold">
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</div>
                     
                         </div>
                         <div class="d_keyboard custom_hgt1 d_tbdr p-2 pt-2 pb-2 d_bg rounded-3" style="width: 95%;margin: 0 auto;">
                         <div class="d_btn_wrap mb-2 d-lg-flex justify-content-lg-between btn-row1">
-                            <button class="btn d_btn1 p-1">~`</button>
-                            <button class="btn d_btn1 p-1" onkeypress="myKey(this)">1</button>
-                            <button class="btn d_btn1 p-1">2</button>
-                            <button class="btn d_btn1 p-1">3</button>
-                            <button class="btn d_btn1 p-1">4</button>
-                            <button class="btn d_btn1 p-1">5</button>
-                            <button class="btn d_btn1 p-1">6</button>
-                            <button class="btn d_btn1 p-1">7</button>
-                            <button class="btn d_btn1 p-1">8</button>
-                            <button class="btn d_btn1 p-1">9</button>
-                            <button class="btn d_btn1 p-1">0</button>
-                            <button class="btn d_btn1 p-1">- _</button>
-                            <button class="btn d_btn1 p-1">= +</button>
-                            <button class="btn d_btn1 p-1 d_w_custom">back</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">~`</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">1</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">2</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">3</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">4</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">5</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">6</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">7</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">8</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">9</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">0</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">- _</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">= +</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom">back</button>
                         </div>
                         
                         <div class="d_btn_wrap mb-2 d-lg-flex justify-content-lg-between">
-                            <button class="btn d_btn1 p-1">Tab</button>
-                            <button class="btn d_btn1 p-1">Q</button>
-                            <button class="btn d_btn1 p-1">W</button>
-                            <button class="btn d_btn1 p-1">E</button>
-                            <button class="btn d_btn1 p-1">R</button>
-                            <button class="btn d_btn1 p-1">T</button>
-                            <button class="btn d_btn1 p-1">Y</button>
-                            <button class="btn d_btn1 p-1">U</button>
-                            <button class="btn d_btn1 p-1">I</button>
-                            <button class="btn d_btn1 p-1">O</button>
-                            <button class="btn d_btn1 p-1">P</button>
-                            <button class="btn d_btn1 p-1">&lbrace; [</button>
-                            <button class="btn d_btn1 p-1">&rbrace; ]</button>
-                            <button class="btn d_btn1 p-1">|  \</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">Tab</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_q">Q</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_w">W</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">E</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">R</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">T</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">Y</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">U</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">I</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">O</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">P</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">&lbrace; [</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">&rbrace; ]</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1">|  \</button>
                         </div>
 
                         <div class="d_btn_wrap mb-2 d-lg-flex justify-content-lg-between">
-                                <button class="btn d_btn1 p-1 d_w_custom">Caps</button>
-                                <button class="btn d_btn1 p-1">A</button>
-                                <button class="btn d_btn1 p-1">S</button>
-                                <button class="btn d_btn1 p-1">D</button>
-                                <button class="btn d_btn1 p-1">F</button>
-                                <button class="btn d_btn1 p-1">G</button>
-                                <button class="btn d_btn1 p-1">H</button>
-                                <button class="btn d_btn1 p-1">J</button>
-                                <button class="btn d_btn1 p-1">K</button>
-                                <button class="btn d_btn1 p-1">L</button>
-                                <button class="btn d_btn1 p-1">: ;</button>
-                                <button class="btn d_btn1 p-1">"" '</button>
-                                <button class="btn d_btn1 p-1 d_w_custom">Enter</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom">Caps</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_a">A</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_s">S</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">D</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">F</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">G</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">H</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">J</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">K</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">L</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">: ;</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">"" '</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom">Enter</button>
                             </div>
 
                             <div class="d_btn_wrap mb-2 d-lg-flex justify-content-lg-between">
-                                <button class="btn d_btn1 p-1 d_w_custom">Shift</button>
-                                <button class="btn d_btn1 p-1">Z</button>
-                                <button class="btn d_btn1 p-1">X</button>
-                                <button class="btn d_btn1 p-1">C</button>
-                                <button class="btn d_btn1 p-1">V</button>
-                                <button class="btn d_btn1 p-1">B</button>
-                                <button class="btn d_btn1 p-1">N</button>
-                                <button class="btn d_btn1 p-1">M</button>
-                                <button class="btn d_btn1 p-1">&lt; ,</button>
-                                <button class="btn d_btn1 p-1">&gt; .</button>
-                                <button class="btn d_btn1 p-1">? /</button>
-                                <button class="btn d_btn1 p-1 d_w_custom">Shfit</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom">Shift</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_z">Z</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_x">X</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">C</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">V</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">B</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">N</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">M</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">&lt; ,</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">&gt; .</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">? /</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom">Shfit</button>
                             </div>
 
                             <div class="d_btn_wrap mb-1 d-lg-flex justify-content-lg-between">
-                                <button class="btn d_btn1 p-1 d_w_custom">ctrl</button>
-                                <button class="btn d_btn1 p-1">fn</button>
-                                <button class="btn d_btn1 p-1">Win</button>
-                                <button class="btn d_btn1 p-1">alt</button>
-                                <button class="btn d_btn1 p-1 d_w_custom_space active">space</button>
-                                <button class="btn d_btn1 p-1">alt</button>
-                                <button class="btn d_btn1 p-1">ctrl</button>
-                                <button class="btn d_btn1 p-1">&uparrow;</button>
-                                <button class="btn d_btn1 p-1">&leftarrow;</button>
-                                <button class="btn d_btn1 p-1">&rightarrow;</button>
-                                <button class="btn d_btn1 p-1">&downarrow;</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom">ctrl</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">fn</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">Win</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">alt</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom_space">space</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">alt</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">ctrl</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">&uparrow;</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">&leftarrow;</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">&rightarrow;</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1">&downarrow;</button>
                             </div>
                         
                     </div>
-                    <div class="d_hand text-center custom_hand_hgt d_tbdr hand_img">
-                        <!-- <img src="./img/hand.png" class="img-fluid w-50"> -->
+                    <div class="custom_hand_hgt d_tbdr d_hand_img mx-auto">
+                        <div class="position-relative mx-auto">
+                            <div style="left: 12px;top: 90px;" class="bg-danger rounded-circle d_hand_dot l_pinky position-absolute"></div>
+                            <div style="left: 43px;top: 54px;" class="bg-danger rounded-circle d_hand_dot l_ring position-absolute"></div>
+                            <div style="left: 88px;top: 38px;" class="bg-danger rounded-circle d_hand_dot l_middle position-absolute"></div>
+                            <div style="left: 127px;top: 52px;" class="bg-danger rounded-circle d_hand_dot l_index position-absolute"></div>
+                            <div style="left: 176px;top: 134px;" class="bg-danger rounded-circle d_hand_dot l_thumb position-absolute"></div>
+                            <div style="right: 176px;top: 134px;" class="bg-danger rounded-circle d_hand_dot r_thumb position-absolute"></div>
+                            <div style="right: 127px;top: 52px;" class="bg-danger rounded-circle d_hand_dot r_index position-absolute"></div>
+                            <div style="right: 88px;top: 38px;" class="bg-danger rounded-circle d_hand_dot r_middle position-absolute"></div>
+                            <div style="right: 43px;top: 54px;" class="bg-danger rounded-circle d_hand_dot r_ring position-absolute"></div>
+                            <div style="right: 12px;top: 90px;" class="bg-danger rounded-circle d_hand_dot r_pinky position-absolute"></div>    
+                        </div>
+                    <!-- <img src="./img/hand3.png" class="img-fluid w-50  position-relative1"> -->
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-3 d_tbdr p-0" style="background-color: #d2f59f;">
-                <h2 class="pb-2 border-bottom border-dark-subtle m-3 mt-5 p-0 mb-1 fs-6 fw-bold">Time</h2>
-                <h3 class="pb-2 m-3 fs-4 fw-bold p-0 mt-0">3:00</h3>
-                <div class="ms-3">
-                    <button class="btn btn-outline-success btn-lg mb-3">Start</button>
+                <h1 class="pb-2 m-3 mt-4 p-0 mb-1 fs-6 fw-bold d_welcome"></h2>
+                <h2 class="pb-2 border-bottom border-dark-subtle m-3 mt-4 p-0 mb-1 fs-6 fw-bold">Time</h2>
+                <h3 class="pb-2 m-3 display-3 fw-bold p-0 mt-0">04:00</h3>
+                <div class="ms-3 mt-5">
+                    <button class="btn btn-outline-success btn-lg mb-3" data-bs-toggle="modal1" data-bs-target="#exampleModal1">Start</button>
                     <button class="btn btn-outline-danger btn-lg mb-3">Reset</button>
+                    <audio controls class="d_audio invisible">
+                        <source src="./sound/sound1.mp3" type="audio/mpeg">
+                    </audio>
                 </div>
                 
                 
