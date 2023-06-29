@@ -40,6 +40,7 @@ border-color: rgba(0, 0, 0, 0.813);
 color: #ffffff;
 font-size: 14px;
 line-height: 10px;
+transition: 5s linear linear;
 
 }
 .d_btn1:hover {
@@ -51,9 +52,11 @@ line-height: 10px;
     color: #ffffff;
     background-color: #444343;
     border-width: 2px;
-    border-color: rgba(117, 107, 107, 0.81);
+    /* border-color: rgba(117, 107, 107, 0.81); */
+    border: none;
     border-style: inset;
     box-shadow: none;
+
 }
 .d_btn1.btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active {
     color: #ffffff;

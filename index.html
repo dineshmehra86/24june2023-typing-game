@@ -26,6 +26,17 @@
                         <label for="last_name" class="form-label">Last Name</label>
                         <input type="last_name" class="form-control" id="last_name">
                         </div>
+                        <div class="mb-3">
+                        <label for="minute" class="form-label">Minute</label>
+                        <select class="form-select d_myselect" aria-label="Default select example">
+                            <option selected>Select Time Duration</option>
+                            <option value="1">1 Min</option>
+                            <option value="2">2 Min</option>
+                            <option value="3">3 Min</option>
+                            <option value="4">4 Min</option>
+                            <option value="5">5 Min</option>
+                          </select>
+                        </div>
                         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                     </form>
                 </div>
@@ -68,14 +79,14 @@
                             <button onclick="playSound()" class="btn d_btn1 p-1">Tab</button>
                             <button onclick="playSound()" class="btn d_btn1 p-1 d_q">Q</button>
                             <button onclick="playSound()" class="btn d_btn1 p-1 d_w">W</button>
-                            <button onclick="playSound()" class="btn d_btn1 p-1">E</button>
-                            <button onclick="playSound()" class="btn d_btn1 p-1">R</button>
-                            <button onclick="playSound()" class="btn d_btn1 p-1">T</button>
-                            <button onclick="playSound()" class="btn d_btn1 p-1">Y</button>
-                            <button onclick="playSound()" class="btn d_btn1 p-1">U</button>
-                            <button onclick="playSound()" class="btn d_btn1 p-1">I</button>
-                            <button onclick="playSound()" class="btn d_btn1 p-1">O</button>
-                            <button onclick="playSound()" class="btn d_btn1 p-1">P</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_e">E</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_r">R</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_t">T</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_y">Y</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_u">U</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_i">I</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_o">O</button>
+                            <button onclick="playSound()" class="btn d_btn1 p-1 d_p">P</button>
                             <button onclick="playSound()" class="btn d_btn1 p-1">&lbrace; [</button>
                             <button onclick="playSound()" class="btn d_btn1 p-1">&rbrace; ]</button>
                             <button onclick="playSound()" class="btn d_btn1 p-1">|  \</button>
@@ -85,13 +96,13 @@
                                 <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom">Caps</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1 d_a">A</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1 d_s">S</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">D</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">F</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">G</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">H</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">J</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">K</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">L</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_d">D</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_f">F</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_g">G</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_h">H</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_j">J</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_k">K</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_l">L</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1">: ;</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1">"" '</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom">Enter</button>
@@ -101,11 +112,11 @@
                                 <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom">Shift</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1 d_z">Z</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1 d_x">X</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">C</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">V</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">B</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">N</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1">M</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_c">C</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_v">V</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_b">B</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_n">N</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_m">M</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1">&lt; ,</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1">&gt; .</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1">? /</button>
@@ -117,7 +128,7 @@
                                 <button onclick="playSound()" class="btn d_btn1 p-1">fn</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1">Win</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1">alt</button>
-                                <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom_space">space</button>
+                                <button onclick="playSound()" class="btn d_btn1 p-1 d_w_custom_space d_space">space</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1">alt</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1">ctrl</button>
                                 <button onclick="playSound()" class="btn d_btn1 p-1">&uparrow;</button>
@@ -146,12 +157,12 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-3 d_tbdr p-0" style="background-color: #d2f59f;">
                 <h1 class="pb-2 m-3 mt-4 p-0 mb-1 fs-6 fw-bold d_welcome"></h2>
                 <h2 class="pb-2 border-bottom border-dark-subtle m-3 mt-4 p-0 mb-1 fs-6 fw-bold">Time</h2>
-                <h3 class="pb-2 m-3 display-3 fw-bold p-0 mt-0">04:00</h3>
+                <h3 class="pb-2 m-3 display-3 fw-bold p-0 mt-0 d_duration">04:00</h3>
                 <div class="ms-3 mt-5">
-                    <button class="btn btn-outline-success btn-lg mb-3" data-bs-toggle="modal1" data-bs-target="#exampleModal1">Start</button>
+                    <button class="btn btn-outline-success btn-lg mb-3" onclick="start()">Start</button>
                     <button class="btn btn-outline-danger btn-lg mb-3">Reset</button>
                     <audio controls class="d_audio invisible">
-                        <source src="./sound/sound1.mp3" type="audio/mpeg">
+                        <source src="./sound/sound4.mp3" type="audio/mpeg">
                     </audio>
                 </div>
                 
