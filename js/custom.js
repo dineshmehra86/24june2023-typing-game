@@ -64,7 +64,11 @@ let start = () => {
 }
 
 // IIFE stands for Immediately Invoked Function Expression. It is a JavaScript design pattern that allows you to create a function and immediately execute it.
+// (after the page load)();
 (()=>{
+    
+    // To know the character current position
+    let currentCharacterPos = 0;
 
     let fname = window.localStorage.getItem('first_name');
     let lname = window.localStorage.getItem('last_name');
@@ -248,6 +252,10 @@ let start = () => {
              for(var i = 0; i < elements.length; i++) {
                 elements[i].style.display= "none";
             }
+            // In below code we are finding character current postion and adding the number
+            currentCharacterPos = currentCharacterPos +1;
+            console.log(currentCharacterPos);
+
             // document.querySelector('.d_hand_dot').style.display = "none";
         })
         // document = whole website
@@ -270,9 +278,31 @@ let start = () => {
         // Ternary operator
         // Syntax
         // C?T:F (C= conditon, ? T = true, : F = false)
-        document.querySelector('.d_duration').innerHTML = localStorage.getItem('duration') == null ?'0:00': localStorage.getItem('duration')+':00'; 
+        document.querySelector('.d_duration').innerHTML = localStorage.getItem('duration') == null ?'': localStorage.getItem('duration')+':00'; 
+
+
+        // Below is the code for paragraph loaded as per requirenment start
+
+        let story = `One day a fox became very hungry as he went to search for some food. He searched high and low, but couldn't find something that he could eat. Finally, as his stomach rumbled, he stumbled upon a farmer's wall. At the top of the wall, he saw the biggest, juiciest grapes he'd ever seen. They had a rich, purple color, telling the fox they were ready to be eaten. To reach the grapes, the fox had to jump high in the air. As he jumped, he opened his mouth to catch the grapes, but he missed. The fox tried again but missed yet again. He tried a few more times but kept failing. Finally, the fox decided it was time to give up and go home. While he walked away, he muttered, “I'm sure the grapes were sour anyway.”`
         
+        // Split Function breaks the "string" into "array sub string" (Array -----> String)
+        console.log(story.split(''));
         
+        // Slice Function return selected element in an array, as a new array with the help of array start and end index number (String------> Array)
+        let stroyword = story.split(' ');
+        // Array index number start from 0 (0, 1, 2, 3)
+        // Here 0 is Inclusive and 20 is exclusive as we just need 20 words in one para (0 to 20) 
         
+        console.log(stroyword.slice(0,20).join(' '))
+        
+        // Function chaining a().b().c().d()....
+        // console.log(stroyword.split(' ').slice(0, 20).join(' '));
+        // Access the dom element
+        // join method return the array as string and not the change the orignal array
+        let showcontent = stroyword.slice(0, 20).join(' ');
+        document.querySelector(".d_type_content").innerHTML = showcontent
+        // End
+
     })();
+
 
