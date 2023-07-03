@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dineshtest()">Test</button>
+    <p class="d_my_para"></p>
+    <!-- <p>One day a fox became very hungry as he went to search for some food. He searched high and low, but couldn't find something that he could eat. Finally, as his stomach rumbled, he stumbled upon a farmer's wall. At the top of the wall, he saw the biggest, juiciest grapes he'd ever seen. They had a rich, purple color, telling the fox they were ready to be eaten. To reach the grapes, the fox had to jump high in the air. As he jumped, he opened his mouth to catch the grapes, but he missed. The fox tried again but missed yet again. He tried a few more times but kept failing. Finally, the fox decided it was time to give up and go home. While he walked away, he muttered, “I'm sure the grapes were sour anyway.”</p> -->
+
+    <script>
+        // Global
+        let story = `One day a fox became very hungry as he went to search for some food. He searched high and low, but couldn't find something that he could eat. Finally, as his stomach rumbled, he stumbled upon a farmer's wall. At the top of the wall, he saw the biggest, juiciest grapes he'd ever seen. They had a rich, purple color, telling the fox they were ready to be eaten. To reach the grapes, the fox had to jump high in the air. As he jumped, he opened his mouth to catch the grapes, but he missed. The fox tried again but missed yet again. He tried a few more times but kept failing. Finally, the fox decided it was time to give up and go home. While he walked away, he muttered, “I'm sure the grapes were sour anyway.”`
+        // let story = `One day a fox became very hungry as he went to search for some food. He searched high and low, but couldn't find something that he could eat. Finally, as his stomach rumbled, he stumbled upon a farmer's wall. At the top of the wall, he saw the biggest, juiciest grapes he'd ever seen. They had a rich, purple color, telling the fox they were ready to be eaten. To reach the grapes, the fox had to jump high in the air. As he jumped, he opened his mouth to catch the grapes, but he missed. The fox tried again but missed yet again. He tried a few more times but kept failing. Finally, the fox decided it was time to give up and go home. While he walked away, he muttered, “I'm sure the grapes were sour anyway.”`
+        // Fat arrow function
+        let pertwolinecharcount = 100;
+        let initialSquence = 1; 
+        let currentcharcountlocation = 1;
+        let curloc = 1;
+        console.log('Total count', story.length);
+        var twolinechar = Math.ceil(story.length/pertwolinecharcount);
+        // Fat Arrow
+        let dineshtest = () => {
+            // Local Variable
+            // console.log('Total count', story.length);
+            
+            // This is the the float value 19.72222222222, to convert this value into the whole number 20, we need to use celi(Increase)
+            // 19.72727272 ceil ---> 20
+            // 19.77272727 floor ---> 19
+            // console.log(twolinechar);
+            
+            document.querySelector(".d_my_para").innerHTML = story;
+        }
+
+        document.addEventListener('keyup', ()=>{
+            console.log('initialSquence-->', initialSquence);
+            console.log('currentcharcountlocation-->', currentcharcountlocation);
+            console.log('pertwolinecharcount-->', pertwolinecharcount);
+            if(currentcharcountlocation >= pertwolinecharcount){
+                currentcharcountlocation = 0;
+                initialSquence++;
+                console.log('new initialSquence', initialSquence);
+            }else {
+                currentcharcountlocation++;
+            }
+
+            if(initialSquence === 1) {
+
+                // console.log('---->',story.substring(initialSquence-1, (initialSquence*pertwolinecharcount), (initialSquence*pertwolinecharcount) + pertwolinecharcount));
+                let tpl = story.substring(initialSquence-1, (initialSquence*pertwolinecharcount), (initialSquence*pertwolinecharcount) + pertwolinecharcount);
+
+                // let tpl = 'dinesh'
+                // cll = 1 <span class="text-green">d</span><span class="text-red;text-decoration-underline">i</span>nesh 
+
+                let p1 = tpl.substring(0, currentcharcountlocation); 
+                let p2 = tpl.substring(currentcharcountlocation);
+                
+                p2 = "<span style='text-decoration: underline;font-weight:bolder;'>" + p2.charAt(0) + "</span>" + p2.slice(1);
+                
+                console.log('---> part 1', p1);
+                console.log('---> part 2', p2);
+                let textcolor = `<span style="color:red;">${p1}</span>` + p2;
+
+                document.querySelector('.d_my_para').innerHTML = textcolor;
+                }else{
+                // console.log('---->',story.substring((initialSquence-1)*pertwolinecharcount, (initialSquence*pertwolinecharcount) + pertwolinecharcount));
+                let tpl = story.substring((initialSquence-1)*pertwolinecharcount, (initialSquence*pertwolinecharcount) + pertwolinecharcount);
+
+                let p1 = tpl.substring(0, currentcharcountlocation); 
+                let p2 = tpl.substring(currentcharcountlocation); 
+
+                p2 = "<span style='text-decoration: underline;font-weight:bolder;'>" + p2.charAt(0) + "</span>" + p2.slice(1);
+                
+
+                console.log('---> part 1', p1);
+                console.log('---> part 2', p2);
+                console.log('---> part 2', tpl);
+
+                let textcolor = `<span style="color:red;">${p1}</span>` + p2;
+                document.querySelector('.d_my_para').innerHTML = textcolor;
+                }
+            curloc++;
+            
+        })
+        // string.substring(start, end)
+       
+        
+    </script>
+</body>
+</html>
