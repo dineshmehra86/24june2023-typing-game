@@ -10,6 +10,22 @@
 // Syntax
 // ()(); (Two Eyes and One Ear)
 
+let fname = window.localStorage.getItem('first_name');
+let lname = window.localStorage.getItem('last_name');
+
+let story = `One day a fox became very hungry as he went to search for some food. He searched high and low, but couldn't find something that he could eat. Finally, as his stomach rumbled, he stumbled upon a farmer's wall. At the top of the wall, he saw the biggest, juiciest grapes he'd ever seen. They had a rich, purple color, telling the fox they were ready to be eaten. To reach the grapes, the fox had to jump high in the air. As he jumped, he opened his mouth to catch the grapes, but he missed. The fox tried again but missed yet again. He tried a few more times but kept failing. Finally, the fox decided it was time to give up and go home. While he walked away, he muttered, “I'm sure the grapes were sour anyway.”`
+
+let pertwolinecharcount = 285;
+        let initialSquence = 1; 
+        let currentcharcountlocation = 1;
+        let curloc = 1;
+        let prevChar = []; // Square bracket is a Array
+        let currentChar = '';
+        // let nextChar = '';  
+        // console.log('Total count', story.length);
+        var twolinechar = Math.ceil(story.length/pertwolinecharcount);
+        
+
 let saveRegisInfo = () => {
     // console.log('ok');
     let fname = document.getElementById('first_name').value;
@@ -20,13 +36,20 @@ let saveRegisInfo = () => {
     window.localStorage.setItem('last_name', lname)
     window.localStorage.setItem('duration', dur)
 }
-let playSound = () => {
-    // console.log('Hello Meenakshi')
+let playSound = (status) => {
     let at = document.querySelector('.d_audio');
-    at.play();
+    if(status === 'correct'){
+        at.src = '../sound/key_sound.mp3';
+        // at.play();
+        console.log('I am Playing sound file', at.play());
+    }else{
+        at.src = '../sound/er_one.mp3';
+        console.log('Ooh Error', at.play());
+        // console.log('I am error sound file', at.play());
+    }
 }
 
-let start = () => {
+let start = ( ) => {
     // Built in function
         // Set the date we're countung down to
         var nextTime = new Date().getTime();
@@ -66,14 +89,6 @@ let start = () => {
 // IIFE stands for Immediately Invoked Function Expression. It is a JavaScript design pattern that allows you to create a function and immediately execute it.
 // (after the page load)();
 (()=>{
-    
-    // To know the character current position
-    let currentCharacterPos = 0;
-
-    let fname = window.localStorage.getItem('first_name');
-    let lname = window.localStorage.getItem('last_name');
-    
-
     // console.log('Page Loaded Successfully');
     // Get a refrence to the modal element
     var modal = document.getElementById('registrationModal');
@@ -87,12 +102,30 @@ let start = () => {
     // check if the local storage is set or not
     if(fname !== null){
         document.querySelector('.d_welcome').innerHTML = 'Welcome ' + fname +' '+ lname;
-        console.log(fname);
+        // console.log(fname);
     } 
     // Keypress sound play
-
         document.addEventListener('keypress',(e)=>{
-            console.log(e.keyCode);
+
+            var prevChar2 = prevChar.pop();
+            // console.log(prevChar)
+            console.log(prevChar)
+            console.log(prevChar2)
+            if(prevChar2 !== currentChar){
+                // Play Error Sound
+                // console.log('Incorrect', prevChar);
+                // console.log('Incorrect', currentChar);
+                playSound('correct');
+            }else{
+                // console.log('Correct', prevChar);
+                // console.log('Correct', currentChar);
+                // Play error sound here
+                playSound('incorrect');
+            }
+            
+            console.log('-->', e);
+            console.log('I am the key', currentChar = e.key);
+            currentChar = e.key;
             if(e.keyCode == 113) {
                 let a = document.querySelector('.d_q');
                 console.log(a.classList.add('active')); 
@@ -238,11 +271,9 @@ let start = () => {
                 console.log(a.classList.add('active')); 
                 document.querySelector('.r_ring').style.display = "block";
             }
-            playSound();
         })
         document.addEventListener('keyup',(e)=>{
-            console.log(e)
-            
+            // console.log(e)
             var elements = document.getElementsByClassName('active');
              for(var i = 0; i < elements.length; i++) {
                 elements[i].classList.remove('active');
@@ -252,10 +283,57 @@ let start = () => {
              for(var i = 0; i < elements.length; i++) {
                 elements[i].style.display= "none";
             }
-            // In below code we are finding character current postion and adding the number
-            currentCharacterPos = currentCharacterPos +1;
-            console.log(currentCharacterPos);
+            
+            // console.log('initialSquence-->', initialSquence);
+            // console.log('currentcharcountlocation-->', currentcharcountlocation);
+            // console.log('pertwolinecharcount-->', pertwolinecharcount);
+            if(currentcharcountlocation >= pertwolinecharcount){
+                currentcharcountlocation = 0;
+                initialSquence++;
+                // console.log('new initialSquence', initialSquence);
+            }else {
+                currentcharcountlocation++;
+            }
 
+            if(initialSquence === 1) {
+
+                // console.log('---->',story.substring(initialSquence-1, (initialSquence*pertwolinecharcount), (initialSquence*pertwolinecharcount) + pertwolinecharcount));
+                let tpl = story.substring(initialSquence-1, (initialSquence*pertwolinecharcount), (initialSquence*pertwolinecharcount) + pertwolinecharcount);
+
+                // let tpl = 'dinesh'
+                // cll = 1 <span class="text-green">d</span><span class="text-red;text-decoration-underline">i</span>nesh 
+
+                var p1 = tpl.substring(0, currentcharcountlocation); 
+                var p2 = tpl.substring(currentcharcountlocation);
+                
+                prevChar.push(p2.charAt(0));
+                p2 = "<span style='text-decoration: underline;font-weight:bolder;'>" + p2.charAt(0) + "</span>" + p2.slice(1);
+                
+                // console.log('---> part 1', p1);
+                // console.log('---> part 2', p2);
+                let textcolor = `<span style="color:red;">${p1}</span>` + p2;
+                document.querySelector('.d_my_para').innerHTML = textcolor;
+                // console.log('next char--->', nextChar);
+                }else{
+                // console.log('---->',story.substring((initialSquence-1)*pertwolinecharcount, (initialSquence*pertwolinecharcount) + pertwolinecharcount));
+                let tpl = story.substring((initialSquence-1)*pertwolinecharcount, (initialSquence*pertwolinecharcount) + pertwolinecharcount);
+                 
+                var p1 = tpl.substring(0, currentcharcountlocation); 
+                var p2 = tpl.substring(currentcharcountlocation); 
+                prevChar.push(p2.charAt(0));
+
+                p2 = "<span style='text-decoration: underline;font-weight:bolder;'>" + p2.charAt(0) + "</span>" + p2.slice(1);
+                
+
+                // console.log('---> part 1', p1);
+                // console.log('---> part 2', p2);
+                // console.log('---> part 2', tpl);
+
+                let textcolor = `<span style="color:red;">${p1}</span>` + p2;
+                document.querySelector('.d_my_para').innerHTML = textcolor;
+                // console.log('next char--->', nextChar);
+                }
+            curloc++;
             // document.querySelector('.d_hand_dot').style.display = "none";
         })
         // document = whole website
@@ -279,30 +357,6 @@ let start = () => {
         // Syntax
         // C?T:F (C= conditon, ? T = true, : F = false)
         document.querySelector('.d_duration').innerHTML = localStorage.getItem('duration') == null ?'': localStorage.getItem('duration')+':00'; 
-
-
-        // Below is the code for paragraph loaded as per requirenment start
-
-        let story = `One day a fox became very hungry as he went to search for some food. He searched high and low, but couldn't find something that he could eat. Finally, as his stomach rumbled, he stumbled upon a farmer's wall. At the top of the wall, he saw the biggest, juiciest grapes he'd ever seen. They had a rich, purple color, telling the fox they were ready to be eaten. To reach the grapes, the fox had to jump high in the air. As he jumped, he opened his mouth to catch the grapes, but he missed. The fox tried again but missed yet again. He tried a few more times but kept failing. Finally, the fox decided it was time to give up and go home. While he walked away, he muttered, “I'm sure the grapes were sour anyway.”`
-        
-        // Split Function breaks the "string" into "array sub string" (Array -----> String)
-        console.log(story.split(''));
-        
-        // Slice Function return selected element in an array, as a new array with the help of array start and end index number (String------> Array)
-        let stroyword = story.split(' ');
-        // Array index number start from 0 (0, 1, 2, 3)
-        // Here 0 is Inclusive and 20 is exclusive as we just need 20 words in one para (0 to 20) 
-        
-        console.log(stroyword.slice(0,20).join(' '))
-        
-        // Function chaining a().b().c().d()....
-        // console.log(stroyword.split(' ').slice(0, 20).join(' '));
-        // Access the dom element
-        // join method return the array as string and not the change the orignal array
-        let showcontent = stroyword.slice(0, 20).join(' ');
-        document.querySelector(".d_type_content").innerHTML = showcontent
-        // End
-
     })();
 
 
